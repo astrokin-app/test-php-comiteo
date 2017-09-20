@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <hr>
+    <h2>Test technique</h2>
+    <hr>
+    <p>
+        Les différentes taches sont à exécuter dans l'ordre
+    </p>
+    <p>
+        Il faut faire le maximum en 1h, tout en conservant de bonnes pratiques
+        et en écrivant un code le plus lisible possible
+    </p>
+    <ul>
+        <li>
+            Création d'un normalizer pour factoriser le code dans l'ApiController
+        </li>
+        <li>
+            Modifier l'APIController pour ne pas renvoyer une 500 si introuvable (avec moins de code qu'actuellement, si possible)
+        </li>
+        <li>
+            Création d'une route Api pour créer un article
+        </li>
+        <li>
+            Créer une entité <code>AppBundle:Author</code>
+            <ul>
+                <li>id (int)</li>
+                <li>name (string)</li>
+                <li>bio (text)</li>
+                <li>created_at (datetime)</li>
+                <li>updated_at (datetime)</li>
+            </ul>
+        </li>
+        <li>
+            Supprimer le champ author de <code>Article</code> et
+            créer une relation many <code>Article</code> to one <code>Author</code>
+        </li>
+        <li>
+            Faire évoluer l'ApiController pour qu'il renvoie des headers HTTP (public, last-modified)
+        </li>
+        <li>
+            Créer un service qui renvoit le nombre d'articles pour un Author donné
+        </li>
+        <li>
+            Utiliser le Symfony Cache sur ce service (TTL infini, détruire le cache quand il faut).
+        </li>
+        <li>
+            Faire évoluer l'ApiController pour qu'il renvoie l'auteur dans la réponse json
+        </li>
+    </ul>
+    <hr>
+    <a href="{{ path('article_index') }}" class="btn btn-primary btn-sm">Page article</a>
+    <hr>
+    <h4>Bon courage ;)</h4>
+    <hr>
+{% endblock %}
