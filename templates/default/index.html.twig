@@ -16,7 +16,9 @@
             Création d'un normalizer pour factoriser le code dans l'ApiController
         </li>
         <li>
-            Modifier l'APIController pour ne pas renvoyer une 500 si introuvable (avec moins de code qu'actuellement, si possible)
+            Modifier l'APIController pour ne pas renvoyer une 500 si l'article demandé n'existe pas (avec moins de code qu'actuellement, si possible)
+            <br>
+            <a href="http://test.comiteo.localhost/api/v1/articles/1337">http://test.comiteo.localhost/api/v1/articles/1337</a>
         </li>
         <li>
             Création d'une route Api pour créer un article
@@ -36,7 +38,9 @@
             créer une relation many <code>Article</code> to one <code>Author</code>
         </li>
         <li>
-            Faire évoluer l'ApiController pour qu'il renvoie des headers HTTP (public, last-modified)
+            Faire évoluer l'ApiController pour qu'il renvoie l'auteur dans la réponse json
+        <br>
+            <a href="http://test.comiteo.localhost/api/v1/articles/1">http://test.comiteo.localhost/api/v1/articles/1</a>
         </li>
         <li>
             Créer un service qui renvoit le nombre d'articles pour un Author donné
@@ -45,7 +49,7 @@
             Utiliser le Symfony Cache sur ce service (TTL infini, détruire le cache quand il faut).
         </li>
         <li>
-            Faire évoluer l'ApiController pour qu'il renvoie l'auteur dans la réponse json
+            Faire évoluer l'ApiController pour qu'il renvoie des headers HTTP (public, last-modified)
         </li>
     </ul>
     <hr>
