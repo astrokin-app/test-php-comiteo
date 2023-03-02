@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Author;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,7 +38,8 @@ class Article
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Author")
+     * @ORM\JoinColumn(name="author_id", referencedColumnName="id", nullable=false)
      */
     private $author;
 
@@ -94,12 +96,12 @@ class Article
         return $this;
     }
 
-    public function getAuthor(): ?string
+    public function getAuthor(): ?Author
     {
         return $this->author;
     }
 
-    public function setAuthor(string $author): self
+    public function setAuthor(?Author $author): self
     {
         $this->author = $author;
 

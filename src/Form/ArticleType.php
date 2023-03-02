@@ -3,9 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Article;
+use App\Entity\Author;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ArticleType extends AbstractType
 {
@@ -16,7 +18,10 @@ class ArticleType extends AbstractType
             ->add('content')
             ->add('createdAt')
             ->add('updatedAt')
-            ->add('author')
+            ->add('author', EntityType::class, [
+                'class' => Author::class,
+                'choice_label' => 'name',
+            ])
         ;
     }
 
